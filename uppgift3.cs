@@ -1,19 +1,20 @@
-internal class Program
+class Program
 {
     static void Main()
-    {
-        Console.WriteLine(add(1, 5, 11));     
-        Console.WriteLine(add(0.3, 0.365, 0.6435));
-        Console.WriteLine(add("C", "#"));
-        Console.WriteLine(add("A", "B", "C"));  
+    {                
+        Console.WriteLine(Add(1, 2, 4));              
+        Console.WriteLine(Add(0.3, 0.2, 0.24534));      
+        Console.WriteLine(Add("text", "txet"));     
+        Console.WriteLine(Add('A', 'D', 'D'));        
     }
 
-    static dynamic add(dynamic a, dynamic b, dynamic c = null)
+    static dynamic Add(dynamic a, dynamic b)
     {
-        if (c != null)
-        {
-            return a + b + c;
-        }
         return a + b;
+    }
+
+    static dynamic Add(dynamic a, dynamic b, dynamic c)
+    {
+        return a + b + c;
     }
 }
