@@ -4,13 +4,21 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine(Absolute(-5));  
-        Console.WriteLine(Absolute(10));  
-        Console.WriteLine(Absolute(0));   
+        Console.Write("Skriv ett tal: ");
+        int number = int.Parse(Console.ReadLine());
+        int absValue = Absolute(number);
+        Console.WriteLine($"Absolutbeloppet är: {absValue}");
     }
 
     static int Absolute(int number)
     {
-        return number < 0 ? -number : number;
+        if (number < 0)
+        {
+            return -number;
+        }
+        else
+        {
+            return number;
+        }
     }
 }
