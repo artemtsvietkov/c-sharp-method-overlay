@@ -4,21 +4,17 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Skriv ett tal: ");
-        int number = int.Parse(Console.ReadLine());
-        int absValue = Absolute(number);
-        Console.WriteLine($"Absolutbeloppet är: {absValue}");
+        double[] numbers = { 5.5, -3, 12 };
+
+        foreach (var number in numbers)
+        {
+            double absValue = Absolute(number);
+            Console.WriteLine($"Talet: {number}, Absolutbeloppet är: {absValue}");
+        }
     }
 
-    static int Absolute(int number)
+    static double Absolute(double number)
     {
-        if (number < 0)
-        {
-            return -number;
-        }
-        else
-        {
-            return number;
-        }
+        return number < 0 ? -number : number;
     }
 }
