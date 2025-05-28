@@ -19,7 +19,7 @@ internal class Program
 
     static void RunAbsV()
     {
-        Console.WriteLine($"Abs of -42 is {AbsV(42)}");
+        Console.WriteLine($"Abs of -42 is {AbsV(-42)}");
         Console.WriteLine($"Abs of -9.81 is {AbsV(-9.81)}");
     }
 }
