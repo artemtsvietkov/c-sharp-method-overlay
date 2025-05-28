@@ -1,20 +1,23 @@
-using System;
-
-class Program
+internal class Program
 {
-    static void Main()
+    static int AbsV(int x)
     {
-        double[] numbers = { 5.5, -3, 12 };
-
-        foreach (var number in numbers)
-        {
-            double absValue = Absolute(number);
-            Console.WriteLine($"Talet: {number}, Absolutbeloppet är: {absValue}");
-        }
+        return x < 0 ? -x : x;
     }
 
-    static double Absolute(double number)
+    static double AbsV(double x)
     {
-        return number < 0 ? -number : number;
+        return x < 0 ? -x : x;
+    }
+
+    static void Main(string[] args)
+    {
+        RunAbsV();
+    }
+
+    static void RunAbsV()
+    {
+        Console.WriteLine($"Abs of -42 is {AbsV(42)}");
+        Console.WriteLine($"Abs of -9.81 is {AbsV(-9.81)}");
     }
 }
