@@ -1,40 +1,37 @@
-using System;
+using System
 
-class Program
+internal class Program
 {
-    static void Main()
+    static int add(int x, int y)
     {
-        Console.WriteLine(Add(1, 2, 4));                 
-        Console.WriteLine(Add(0.3, 0.2, 0.24534));       
-        Console.WriteLine(Add("text", "txet"));           
-        Console.WriteLine(Add('A', 'D', 'D'));             
+        return x + y;
     }
 
-    static dynamic Add(params dynamic[] args)
+    static double add(double x, double y)
     {
-        bool anyStringOrChar = false;
-        foreach (var arg in args)
-        {
-            if (arg is string || arg is char)
-            {
-                anyStringOrChar = true;
-                break;
-            }
-        }
+        return x + y;
+    }
 
-        if (anyStringOrChar)
-        {
-            string result = "";
-            foreach (var arg in args)
-                result += arg.ToString();
-            return result;
-        }
-        else
-        {
-            dynamic sum = 0;
-            foreach (var arg in args)
-                sum += arg;
-            return sum;
-        }
+    static string add(string x, string y)
+    {
+        return x + y;
+    }
+
+    static string add(char x, char y)
+    {
+        return x.ToString() + y.ToString();
+    }
+
+    static void Main(string[] args)
+    {
+        AddV();
+    }
+
+    static void AddV()
+    {
+        Console.WriteLine(add(10, 25));
+        Console.WriteLine(add(3.14, 2.7421));
+        Console.WriteLine(add("sun", "shine"));
+        Console.WriteLine(add('N', 'D'));
     }
 }
